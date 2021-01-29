@@ -27,7 +27,7 @@ public class ListFragment extends Fragment {
 
 
     /**
-     * インスタンス生成メソッド
+     * インスタンスの生成
      * @param rule
      * @return ListFragment
      */

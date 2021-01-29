@@ -28,7 +28,7 @@ public class RuleFragment extends Fragment {
 
 
     /**
-     * インスタンス生成メソッド
+     * インスタンスの生成
      * @param mode
      * @return
      */
