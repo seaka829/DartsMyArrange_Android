@@ -12,6 +12,11 @@ import androidx.fragment.app.Fragment;
  */
 public class TopFragment extends Fragment {
 
+    // UI
+    DartsEffectButton startButton;
+    DartsEffectButton editButton;
+
+
     /**
      * インスタンスを生成するメソッド
      * @return
@@ -29,5 +34,15 @@ public class TopFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        // スタートボタンの設定
+        startButton = view.findViewById(R.id.start_button);
+        startButton.setText(R.string.start_button);
+        startButton.setColor(Constant.ColorType.I_ACCENT_COLOR);
+
+        // 編集ボタン
+        editButton = view.findViewById(R.id.edit_button);
+        editButton.setText(R.string.edit_button);
+        editButton.setColor(Constant.ColorType.I_BASE_COLOR);
     }
 }
