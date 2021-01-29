@@ -37,7 +37,7 @@ public class DartsEffectButton extends ConstraintLayout {
     private Object          fragment;           // 遷移先のフラグメント
 
     /**
-     * ダーツエフェクトボタン生成時に呼ばれるメソッド
+     * ダーツエフェクトボタン生成時に呼ばれる
      * @param context
      * @param attrs
      */
@@ -112,7 +112,7 @@ public class DartsEffectButton extends ConstraintLayout {
 
 
     /**
-     * ダーツエフェクトボタンクリック時の処理メソッド
+     * ダーツエフェクトボタンクリック時の処理
      */
     private OnClickListener onClickListener = new View.OnClickListener() {
         @Override
@@ -131,7 +131,7 @@ public class DartsEffectButton extends ConstraintLayout {
 
 
     /**
-     * ダーツアイコンのアニメーションを実施するメソッド
+     * ダーツアイコンのアニメーション
      */
     private void dartsEffect() {
         // ダーツアイコンの表示
@@ -156,7 +156,7 @@ public class DartsEffectButton extends ConstraintLayout {
 
 
     /**
-     * 遷移処理を行うメソッド
+     * 遷移処理
      */
     private void transition() {
         if(fragmentManager != null) {
@@ -169,7 +169,7 @@ public class DartsEffectButton extends ConstraintLayout {
 
 
     /**
-     * 遷移先の設定を行うメソッド
+     * 遷移先の設定
      * @param fragmentManager
      * @param fragment
      */
@@ -180,7 +180,7 @@ public class DartsEffectButton extends ConstraintLayout {
 
 
     /**
-     * ボタンテキストを設定するメソッド
+     * ボタンテキストの設定
      * @param text
      */
     public void setText(int text) {
@@ -189,7 +189,7 @@ public class DartsEffectButton extends ConstraintLayout {
 
 
     /**
-     * ダーツエフェクトボタンの色設定を行うメソッド
+     * ダーツエフェクトボタンの色設定
      * @param colorType
      */
     public void setColor(int colorType) {

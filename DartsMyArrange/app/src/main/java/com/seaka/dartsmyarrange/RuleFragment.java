@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment;
 public class RuleFragment extends Fragment {
 
     // UI
+    private Toolbar           toolbar;          // ツールバー
     private DartsEffectButton singleOutButton;  // シングルアウトボタン
     private DartsEffectButton doubleOutButton;  // ダブルアウトボタン
     private DartsEffectButton masterOutButton;  // マスタアウトボタン
@@ -62,39 +63,52 @@ public class RuleFragment extends Fragment {
      * UIの設定
      */
     private void setUi() {
-        Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
-
         // ツールバーの非表示
+        toolbar = getActivity().findViewById(R.id.toolbar);
         LinearLayout.LayoutParams toolbarLayoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 152);
         toolbar.setLayoutParams(toolbarLayoutParams);
         toolbar.setTitle("SELECT RULE");
 
         // モードごとにボタンの色を設定
-        int color;
         switch (mode) {
             case Constant.Mode.I_GAME:
-                color = Constant.ColorType.I_ACCENT_COLOR;
+                // シングルアウトボタンの設定
+                singleOutButton = getView().findViewById(R.id.single_out_button);
+                singleOutButton.setText(R.string.single_out_button);
+                singleOutButton.setColor(Constant.ColorType.I_ACCENT_COLOR);
+//                singleOutButton.setTransition(getFragmentManager(), ListFragment.newInstance(Constant.Rule.I_SINGLE_OUT));
+
+                // ダブルアウトボタンの設定
+                doubleOutButton = getView().findViewById(R.id.double_out_button);
+                doubleOutButton.setText(R.string.double_out_button);
+                doubleOutButton.setColor(Constant.ColorType.I_ACCENT_COLOR);
+//                doubleOutButton.setTransition(getFragmentManager(), ListFragment.newInstance(Constant.Rule.I_DOUBLE_OUT));
+
+                // マスタアウトボタンの設定
+                masterOutButton = getView().findViewById(R.id.master_out_button);
+                masterOutButton.setText(R.string.master_out_button);
+                masterOutButton.setColor(Constant.ColorType.I_ACCENT_COLOR);
+//                masterOutButton.setTransition(getFragmentManager(), ListFragment.newInstance(Constant.Rule.I_MASTER_OUT));
                 break;
             case Constant.Mode.I_EDIT:
-                color = Constant.ColorType.I_BASE_COLOR;
+                // シングルアウトボタンの設定
+                singleOutButton = getView().findViewById(R.id.single_out_button);
+                singleOutButton.setText(R.string.single_out_button);
+                singleOutButton.setColor(Constant.ColorType.I_BASE_COLOR);
+                singleOutButton.setTransition(getFragmentManager(), ListFragment.newInstance(Constant.Rule.I_SINGLE_OUT));
+
+                // ダブルアウトボタンの設定
+                doubleOutButton = getView().findViewById(R.id.double_out_button);
+                doubleOutButton.setText(R.string.double_out_button);
+                doubleOutButton.setColor(Constant.ColorType.I_BASE_COLOR);
+                doubleOutButton.setTransition(getFragmentManager(), ListFragment.newInstance(Constant.Rule.I_DOUBLE_OUT));
+
+                // マスタアウトボタンの設定
+                masterOutButton = getView().findViewById(R.id.master_out_button);
+                masterOutButton.setText(R.string.master_out_button);
+                masterOutButton.setColor(Constant.ColorType.I_BASE_COLOR);
+                masterOutButton.setTransition(getFragmentManager(), ListFragment.newInstance(Constant.Rule.I_MASTER_OUT));
                 break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + mode);
         }
-
-        // シングルアウトボタンの設定
-        singleOutButton = getView().findViewById(R.id.single_out_button);
-        singleOutButton.setText(R.string.single_out_button);
-        singleOutButton.setColor(color);
-
-        // ダブルアウトボタンの設定
-        doubleOutButton = getView().findViewById(R.id.double_out_button);
-        doubleOutButton.setText(R.string.double_out_button);
-        doubleOutButton.setColor(color);
-
-        // マスタアウトボタンの設定
-        masterOutButton = getView().findViewById(R.id.master_out_button);
-        masterOutButton.setText(R.string.master_out_button);
-        masterOutButton.setColor(color);
     }
 }

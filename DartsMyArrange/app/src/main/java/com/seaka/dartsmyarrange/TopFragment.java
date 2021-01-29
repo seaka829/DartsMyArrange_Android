@@ -22,7 +22,7 @@ public class TopFragment extends Fragment {
 
 
     /**
-     * インスタンスを生成するメソッド
+     * インスタンスの生成
      * @return
      */
     public static TopFragment newInstance() {
