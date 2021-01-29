@@ -12,15 +12,14 @@
         <item name="android:textColorSecondary">@color/white_color</item>
         <item name="android:colorControlHighlight">@color/white_color</item>
     </style>
-
     <style name="TextAppearance.Toolbar" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
         <item name="android:textAllCaps">true</item>
         <item name="android:fontFamily">@font/changa_medium</item>
         <item name="android:textSize">28sp</item>
     </style>
-
     <style name="Toolbar" parent="@style/Widget.AppCompat.Toolbar">
         <item name="android:theme">@style/ToolbarTheme</item>
         <item name="titleTextAppearance">@style/TextAppearance.Toolbar</item>
     </style>
+
 </resources>

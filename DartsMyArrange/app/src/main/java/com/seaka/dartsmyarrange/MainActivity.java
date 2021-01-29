@@ -3,8 +3,9 @@ package com.seaka.dartsmyarrange;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.content.res.TypedArray;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 
 /**
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // アクションバーの設定
+        // ツールバーの設定
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
@@ -30,7 +31,5 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.container, TopFragment.newInstance()).commitNow();
         }
-
-
     }
 }

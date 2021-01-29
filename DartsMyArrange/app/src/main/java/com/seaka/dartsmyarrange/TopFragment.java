@@ -2,6 +2,8 @@ package com.seaka.dartsmyarrange;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -42,6 +44,17 @@ public class TopFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         setUi();
+        setHasOptionsMenu(true);
+    }
+
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        // ツールバーの設定
+        toolbar = getActivity().findViewById(R.id.toolbar);
+        LinearLayout.LayoutParams toolbarLayoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 0);
+        toolbar.setLayoutParams(toolbarLayoutParams);
+        toolbar.setTitle("");
     }
 
 
@@ -49,12 +62,6 @@ public class TopFragment extends Fragment {
      * UIの設定
      */
     private void setUi() {
-        // ツールバーの非表示
-        toolbar = getActivity().findViewById(R.id.toolbar);
-        LinearLayout.LayoutParams toolbarLayoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 0);
-        toolbar.setLayoutParams(toolbarLayoutParams);
-        toolbar.setTitle("");
-
         // スタートボタンの設定
         startButton = getView().findViewById(R.id.start_button);
         startButton.setText(R.string.start_button);
