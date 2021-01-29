@@ -51,7 +51,6 @@ public class DartsEffectButton extends ConstraintLayout {
     /**
      * UIの設定
      */
-    @RequiresApi(api = Build.VERSION_CODES.O)
     private void setUi() {
         // 影のレイアウト設定と生成
         ConstraintLayout.LayoutParams shadowLayoutParams = new ConstraintLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
@@ -98,7 +97,7 @@ public class DartsEffectButton extends ConstraintLayout {
         button = new Button(getContext());
         button.setLayoutParams(buttonLayoutParams);
         button.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.alpha0_color));
-        button.setTypeface(Typeface.createFromAsset(getResources().getAssets(), "changa_medium.ttf"));
+//        button.setTypeface(Typeface.createFromAsset(getResources().getAssets(), "changa_medium.ttf"));
         button.setTextSize(40);
         button.setOnClickListener(onClickListener);
         this.addView(button);

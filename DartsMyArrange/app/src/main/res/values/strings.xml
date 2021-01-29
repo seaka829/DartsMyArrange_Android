@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">DartsMyArrange</string>
-
     <string name="start_button">START</string>
     <string name="edit_button">EDIT</string>
+
+    <string name="single_out_button">SINGLE OUT</string>
+    <string name="double_out_button">DOUBLE OUT</string>
+    <string name="master_out_button">MASTER OUT</string>
 </resources>

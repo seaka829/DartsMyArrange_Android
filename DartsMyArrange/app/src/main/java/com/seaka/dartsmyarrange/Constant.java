@@ -24,4 +24,25 @@ public class Constant {
             return -1;
         }
     }
+
+    public static class Mode {
+        public  static final int    I_GAME  = 0;
+        public  static final int    I_EDIT  = 1;
+        public  static final String S_GAME    = "GAME";
+        public  static final String S_EDIT    = "EDIT";
+        private static final String[] LIST = {S_GAME, S_EDIT};
+        public  static final String getString(int i) {
+            return LIST[i];
+        }
+        public static final int getIndex(String s) {
+            int i = 0;
+            for(String item: LIST) {
+                if(item == s) {
+                    return i;
+                }
+                i++;
+            }
+            return -1;
+        }
+    }
 }

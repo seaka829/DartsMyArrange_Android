@@ -6,40 +6,38 @@
     android:layout_height="match_parent"
     android:background="@color/main_color">
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="0dp"
-        android:layout_height="208dp"
-        android:layout_marginTop="80dp"
-        android:fontFamily="@font/changa_extrabold"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="Darts 2.43"
-        android:textColor="@color/white_color"
-        android:textSize="72sp"
+    <com.seaka.dartsmyarrange.DartsEffectButton
+        android:id="@+id/single_out_button"
+        android:layout_width="match_parent"
+        android:layout_height="104dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"></com.seaka.dartsmyarrange.DartsEffectButton>
 
     <com.seaka.dartsmyarrange.DartsEffectButton
-        android:id="@+id/start_button"
+        android:id="@+id/double_out_button"
         android:layout_width="match_parent"
         android:layout_height="104dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@id/edit_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/single_out_button">
+    </com.seaka.dartsmyarrange.DartsEffectButton>
 
     <com.seaka.dartsmyarrange.DartsEffectButton
-        android:id="@+id/edit_button"
+        android:id="@+id/master_out_button"
         android:layout_width="match_parent"
         android:layout_height="104dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="104dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/double_out_button">
+    </com.seaka.dartsmyarrange.DartsEffectButton>
 </androidx.constraintlayout.widget.ConstraintLayout>
-
