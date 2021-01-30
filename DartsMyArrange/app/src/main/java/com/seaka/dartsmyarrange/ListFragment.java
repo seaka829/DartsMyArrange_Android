@@ -9,9 +9,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+
+import java.util.ArrayList;
 
 
 /**
@@ -20,7 +23,9 @@ import androidx.fragment.app.Fragment;
 public class ListFragment extends Fragment {
 
     // UI
-    private Toolbar toolbar;    // ツールバー
+    private Toolbar                toolbar;     // ツールバー
+    private ListView               listview;    // リストビュー
+    private ArrayList<ArrangeItem> items;       //アレンジ情報一覧
 
     // 設定値
     private int rule;           // ルール
@@ -56,6 +61,7 @@ public class ListFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        getItems();
         setUi();
         setHasOptionsMenu(true);
     }
@@ -88,9 +94,33 @@ public class ListFragment extends Fragment {
 
 
     /**
+     * アレンジ一覧をDBから取得
+     */
+    private void getItems() {
+        // テストデータ
+        items = new ArrayList<>();
+        items.add(new ArrangeItem(0, 180, 3, 20, 3, 20, 3, 20));
+        items.add(new ArrangeItem(0, 180, 3, 20, 3, 20, 3, 20));
+        items.add(new ArrangeItem(0, 180, 3, 20, 3, 20, 3, 20));
+        items.add(new ArrangeItem(0, 180, 3, 20, 3, 20, 3, 20));
+        items.add(new ArrangeItem(0, 180, 3, 20, 3, 20, 3, 20));
+        items.add(new ArrangeItem(0, 180, 3, 20, 3, 20, 3, 20));
+        items.add(new ArrangeItem(0, 180, 3, 20, 3, 20, 3, 20));
+        items.add(new ArrangeItem(0, 180, 3, 20, 3, 20, 3, 20));
+        items.add(new ArrangeItem(0, 180, 3, 20, 3, 20, 3, 20));
+        items.add(new ArrangeItem(0, 180, 3, 20, 3, 20, 3, 20));
+        items.add(new ArrangeItem(0, 180, 3, 20, 3, 20, 3, 20));
+        items.add(new ArrangeItem(0, 180, 3, 20, 3, 20, 3, 20));
+        items.add(new ArrangeItem(0, 180, 3, 20, 3, 20, 3, 20));
+    }
+
+
+    /**
      * UIの設定
      */
     private void setUi() {
-
+        listview = getActivity().findViewById(R.id.listview);
+        ListAdapter adapter = new ListAdapter(getActivity(), R.layout.list_item, items);
+        listview.setAdapter(adapter);
     }
 }

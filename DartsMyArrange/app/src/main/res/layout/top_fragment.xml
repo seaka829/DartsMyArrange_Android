@@ -14,7 +14,6 @@
         android:fontFamily="@font/changa_extrabold"
         android:gravity="center_horizontal|center_vertical"
         android:text="Darts 2.43"
-        android:textColor="@color/white_color"
         android:textSize="72sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
