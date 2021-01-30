@@ -9,6 +9,10 @@ import android.widget.TextView;
 
 import java.util.List;
 
+
+/**
+ * アレンジ一覧画面にアイテムを表示するためのアダプタ
+ */
 public class ListAdapter extends ArrayAdapter<ArrangeItem> {
 
     // UI

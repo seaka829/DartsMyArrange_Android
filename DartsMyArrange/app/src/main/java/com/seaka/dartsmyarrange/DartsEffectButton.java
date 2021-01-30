@@ -4,7 +4,6 @@ import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.content.Context;
 import android.graphics.Typeface;
-import android.os.Build;
 import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.View;
@@ -12,13 +11,15 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import androidx.annotation.RequiresApi;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+/**
+ * クリック時にダーツアイコンのアニメーションが発生するボタンのクラス
+ */
 public class DartsEffectButton extends ConstraintLayout {
 
     // 定数
@@ -97,7 +98,7 @@ public class DartsEffectButton extends ConstraintLayout {
         button = new Button(getContext());
         button.setLayoutParams(buttonLayoutParams);
         button.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.alpha0_color));
-//        button.setTypeface(Typeface.createFromAsset(getResources().getAssets(), "changa_medium.ttf"));
+        button.setTypeface(Typeface.createFromAsset(getResources().getAssets(), "changa_medium.ttf"));
         button.setTextSize(40);
         button.setOnClickListener(onClickListener);
         this.addView(button);

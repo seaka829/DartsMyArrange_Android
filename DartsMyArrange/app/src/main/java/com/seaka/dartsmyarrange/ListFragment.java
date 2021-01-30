@@ -1,7 +1,6 @@
 package com.seaka.dartsmyarrange;
 
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -103,7 +102,7 @@ public class ListFragment extends Fragment {
     private void getItems() {
         // テストデータ
         items = new ArrayList<>();
-        items.add(new ArrangeItem(0, 150, 3, 20, 3, 20, 3, 20));
+        items.add(new ArrangeItem(0, 10, 3, 20, 0, 0, 4, 0));
         items.add(new ArrangeItem(0, 180, 1, 20, 3, 20, 3, 20));
         items.add(new ArrangeItem(0, 180, 2, 20, 1, 20, 3, 20));
         items.add(new ArrangeItem(0, 180, 3, 20, 2, 20, 1, 20));

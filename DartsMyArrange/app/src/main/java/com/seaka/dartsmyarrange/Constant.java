@@ -1,5 +1,9 @@
 package com.seaka.dartsmyarrange;
 
+
+/**
+ * 定数クラス
+ */
 public class Constant {
 
     public static class ColorType {

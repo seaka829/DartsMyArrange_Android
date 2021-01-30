@@ -1,7 +1,9 @@
 package com.seaka.dartsmyarrange;
 
-import android.provider.ContactsContract;
 
+/**
+ * アレンジ情報のクラス
+ */
 public class ArrangeItem {
 
     // 変数
@@ -110,6 +112,11 @@ public class ArrangeItem {
 
     public void setFirstType(int firstType) {
         this.firstType = firstType;
+
+        // 一投目のナンバーを0に設定
+        if(firstType==Constant.PointType.I_NULL || firstType==Constant.PointType.I_BULL) {
+            this.firstNumber = 0;
+        }
     }
 
     public int getFirstNumber() {
@@ -126,6 +133,11 @@ public class ArrangeItem {
 
     public void setSecondType(int secondType) {
         this.secondType = secondType;
+
+        // 二投目のナンバーを0に設定
+        if(secondType==Constant.PointType.I_NULL || secondType==Constant.PointType.I_BULL) {
+            this.secondNumber = 0;
+        }
     }
 
     public int getSecondNumber() {
@@ -142,6 +154,11 @@ public class ArrangeItem {
 
     public void setThirdType(int thirdType) {
         this.thirdType = thirdType;
+
+        // 三投目のナンバーを0に設定
+        if(thirdType==Constant.PointType.I_NULL || thirdType==Constant.PointType.I_BULL) {
+            this.thirdNumber = 0;
+        }
     }
 
     public int getThirdNumber() {
