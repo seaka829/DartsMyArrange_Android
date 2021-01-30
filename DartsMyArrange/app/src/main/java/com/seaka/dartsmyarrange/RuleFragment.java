@@ -57,7 +57,7 @@ public class RuleFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        setUi();
+        setButton();
         setHasOptionsMenu(true);
     }
 
@@ -66,16 +66,16 @@ public class RuleFragment extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         // ツールバーの設定
         toolbar = getActivity().findViewById(R.id.toolbar);
-        LinearLayout.LayoutParams toolbarLayoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 152);
+        LinearLayout.LayoutParams toolbarLayoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 0);
         toolbar.setLayoutParams(toolbarLayoutParams);
-        toolbar.setTitle("SELECT RULE");
+        toolbar.setTitle(null);
     }
 
 
     /**
      * UIの設定
      */
-    private void setUi() {
+    private void setButton() {
         // モードごとにボタンの色を設定
         switch (mode) {
             case Constant.Mode.I_GAME:

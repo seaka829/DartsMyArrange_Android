@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         // ツールバーの設定
         toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("");
+        toolbar.setTitle(null);
         setSupportActionBar(toolbar);
 
         // Fragmentの設置

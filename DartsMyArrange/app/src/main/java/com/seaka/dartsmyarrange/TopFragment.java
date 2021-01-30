@@ -43,7 +43,7 @@ public class TopFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        setUi();
+        setButton();
         setHasOptionsMenu(true);
     }
 
@@ -54,14 +54,14 @@ public class TopFragment extends Fragment {
         toolbar = getActivity().findViewById(R.id.toolbar);
         LinearLayout.LayoutParams toolbarLayoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 0);
         toolbar.setLayoutParams(toolbarLayoutParams);
-        toolbar.setTitle("");
+        toolbar.setTitle(null);
     }
 
 
     /**
-     * UIの設定
+     * ボタンの設定
      */
-    private void setUi() {
+    private void setButton() {
         // スタートボタンの設定
         startButton = getView().findViewById(R.id.start_button);
         startButton.setText(R.string.start_button);

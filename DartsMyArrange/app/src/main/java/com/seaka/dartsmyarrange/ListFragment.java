@@ -66,7 +66,7 @@ public class ListFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         getItems();
-        setUi();
+        setListview();
         setHasOptionsMenu(true);
     }
 
@@ -122,7 +122,7 @@ public class ListFragment extends Fragment {
     /**
      * UIの設定
      */
-    private void setUi() {
+    private void setListview() {
         listview = getActivity().findViewById(R.id.listview);
         ListAdapter adapter = new ListAdapter(getActivity(), R.layout.list_item, items);
         listview.setAdapter(adapter);

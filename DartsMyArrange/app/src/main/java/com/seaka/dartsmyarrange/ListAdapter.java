@@ -11,16 +11,24 @@ import java.util.List;
 
 public class ListAdapter extends ArrayAdapter<ArrangeItem> {
 
-    private int               resource;
-    private List<ArrangeItem> items;
-    private LayoutInflater    layoutInflater;
-
+    // UI
     private TextView totalPointTextView;    // 合計点数のテキストビュー
     private TextView firstPointTextView;    // 一投目点数のテキストビュー
     private TextView secondPointTextView;   // 二投目点数のテキストビュー
     private TextView thirdPointTextView;    // 三投目点数のテキストビュー
 
+    // 変数
+    private int               resource;
+    private List<ArrangeItem> items;
+    private LayoutInflater    layoutInflater;
 
+
+    /**
+     * コンストラクタ
+     * @param context
+     * @param resource
+     * @param items
+     */
     public ListAdapter(Context context, int resource, List<ArrangeItem> items) {
         super(context, resource, items);
 
