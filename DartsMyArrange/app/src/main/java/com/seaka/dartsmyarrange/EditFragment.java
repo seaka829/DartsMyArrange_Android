@@ -2,16 +2,24 @@ package com.seaka.dartsmyarrange;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
+/**
+ * アレンジ編集画面のフラグメント
+ */
 public class EditFragment extends Fragment {
 
     // UI
+    private Toolbar toolbar;
     private Spinner firstTypeSpinner;
     private Spinner secondTypeSpinner;
     private Spinner thirdTypeSpinner;
@@ -59,6 +67,18 @@ public class EditFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         setSpinner();
+        setHasOptionsMenu(true);
+    }
+
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        // ツールバーの設定
+        toolbar = getActivity().findViewById(R.id.toolbar);
+        LinearLayout.LayoutParams toolbarLayoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 152);
+        toolbar.setLayoutParams(toolbarLayoutParams);
+        toolbar.setTitle(Constant.Rule.getString(rule));
+
     }
 
 
@@ -75,10 +95,10 @@ public class EditFragment extends Fragment {
         adapter.add(Constant.PointType.S_BULL);
 
         firstTypeSpinner = getView().findViewById(R.id.first_type_spinner);
-        firstTypeSpinner.setAdapter(adapter);
+//        firstTypeSpinner.setAdapter(adapter);
         secondTypeSpinner = getView().findViewById(R.id.second_type_spinner);
-        secondTypeSpinner.setAdapter(adapter);
+//        secondTypeSpinner.setAdapter(adapter);
         thirdTypeSpinner = getView().findViewById(R.id.third_type_spinner);
-        thirdTypeSpinner.setAdapter(adapter);
+//        thirdTypeSpinner.setAdapter(adapter);
     }
 }

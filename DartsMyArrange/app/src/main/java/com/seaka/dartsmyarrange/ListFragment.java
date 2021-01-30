@@ -104,13 +104,13 @@ public class ListFragment extends Fragment {
         // テストデータ
         items = new ArrayList<>();
         items.add(new ArrangeItem(0, 150, 3, 20, 3, 20, 3, 20));
-        items.add(new ArrangeItem(0, 180, 3, 20, 3, 20, 3, 20));
-        items.add(new ArrangeItem(0, 180, 3, 20, 3, 20, 3, 20));
-        items.add(new ArrangeItem(0, 180, 3, 20, 3, 20, 3, 20));
-        items.add(new ArrangeItem(0, 180, 3, 20, 3, 20, 3, 20));
-        items.add(new ArrangeItem(0, 180, 3, 20, 3, 20, 3, 20));
-        items.add(new ArrangeItem(0, 180, 3, 20, 3, 20, 3, 20));
-        items.add(new ArrangeItem(0, 180, 3, 20, 3, 20, 3, 20));
+        items.add(new ArrangeItem(0, 180, 1, 20, 3, 20, 3, 20));
+        items.add(new ArrangeItem(0, 180, 2, 20, 1, 20, 3, 20));
+        items.add(new ArrangeItem(0, 180, 3, 20, 2, 20, 1, 20));
+        items.add(new ArrangeItem(0, 180, 4, 20, 3, 20, 2, 20));
+        items.add(new ArrangeItem(0, 180, 0, 20, 4, 20, 3, 20));
+        items.add(new ArrangeItem(0, 180, 3, 20, 0, 20, 4, 20));
+        items.add(new ArrangeItem(0, 180, 3, 20, 3, 20, 0, 20));
         items.add(new ArrangeItem(0, 180, 3, 20, 3, 20, 3, 20));
         items.add(new ArrangeItem(0, 180, 3, 20, 3, 20, 3, 20));
         items.add(new ArrangeItem(0, 180, 3, 20, 3, 20, 3, 20));

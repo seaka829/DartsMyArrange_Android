@@ -50,16 +50,19 @@ public class ListAdapter extends ArrayAdapter<ArrangeItem> {
 
         // アイテムの取得
         ArrangeItem item = items.get(position);
+        String[] strPoint = item.getStrPoint();
 
         // UIの取得
-        totalPointTextView  = view.findViewById(R.id.total_point_textview);
-        firstPointTextView  = view.findViewById(R.id.first_point_textview);
+        totalPointTextView = view.findViewById(R.id.total_point_textview);
+        firstPointTextView = view.findViewById(R.id.first_point_textview);
         secondPointTextView = view.findViewById(R.id.second_point_textview);
-        thirdPointTextView  = view.findViewById(R.id.third_point_textview);
+        thirdPointTextView = view.findViewById(R.id.third_point_textview);
 
         // UIの設定
-
-
+        totalPointTextView.setText(strPoint[0]);
+        firstPointTextView.setText(strPoint[1]);
+        secondPointTextView.setText(strPoint[2]);
+        thirdPointTextView.setText(strPoint[3]);
 
         return view;
     }

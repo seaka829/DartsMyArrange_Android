@@ -1,5 +1,7 @@
 package com.seaka.dartsmyarrange;
 
+import android.provider.ContactsContract;
+
 public class ArrangeItem {
 
     // 変数
@@ -11,6 +13,7 @@ public class ArrangeItem {
     private int secondNumber;   // 二投目のナンバー
     private int thirdType;      // 三投目の倍率
     private int thirdNumber;    // 三投目のナンバー
+
 
     /**
      * コンストラクタ
@@ -35,6 +38,52 @@ public class ArrangeItem {
         setSecondNumber(secondNumber);
         setThirdType(thirdType);
         setThirdNumber(thirdNumber);
+    }
+
+
+    /**
+     * 得点を文字列(配列)として取得
+     * String[0]...合計点数
+     * String[1]...一投目の点数
+     * String[2]...二投目の点数
+     * String[3]...三投目の点数
+     * @return String[]
+     */
+    public String[] getStrPoint() {
+        // 合計点数
+        String strTotalPoint = String.valueOf(totalPoint);
+
+        // 一投目の点数
+        String strFirstPoint;
+        if (firstType==Constant.PointType.I_NULL || firstType==Constant.PointType.I_BULL) {
+            strFirstPoint = Constant.PointType.getString(firstType);
+        }
+        else {
+            strFirstPoint = Constant.PointType.getString(firstType) + String.valueOf(firstNumber);
+        }
+
+        // 二投目の
+        String strSecondPoint;
+        if (secondType==Constant.PointType.I_NULL || secondType==Constant.PointType.I_BULL) {
+            strSecondPoint = Constant.PointType.getString(secondType);
+        }
+        else {
+            strSecondPoint = Constant.PointType.getString(secondType) + String.valueOf(secondNumber);
+        }
+
+        // 三投目の
+        String strThirdPoint;
+        if (thirdType==Constant.PointType.I_NULL || thirdType==Constant.PointType.I_BULL) {
+            strThirdPoint = Constant.PointType.getString(thirdType);
+        }
+        else {
+            strThirdPoint = Constant.PointType.getString(thirdType) + String.valueOf(thirdNumber);
+        }
+
+        // 配列の生成
+        String[] strPoint = {strTotalPoint, strFirstPoint, strSecondPoint, strThirdPoint};
+
+        return strPoint;
     }
 
 
