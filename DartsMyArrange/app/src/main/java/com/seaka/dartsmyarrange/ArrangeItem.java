@@ -13,7 +13,7 @@ public class ArrangeItem {
     private int thirdNumber;    // 三投目のナンバー
 
     /**
-     * インスタンスの生成
+     * コンストラクタ
      * @param id
      * @param totalPoint
      * @param firstType

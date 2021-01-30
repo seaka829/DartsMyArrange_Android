@@ -37,7 +37,7 @@ public class DartsEffectButton extends ConstraintLayout {
     private Object          fragment;           // 遷移先のフラグメント
 
     /**
-     * ダーツエフェクトボタン生成時に呼ばれる
+     * コンストラクタ
      * @param context
      * @param attrs
      */

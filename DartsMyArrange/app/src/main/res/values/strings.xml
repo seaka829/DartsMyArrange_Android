@@ -6,4 +6,13 @@
     <string name="single_out_button">SINGLE OUT</string>
     <string name="double_out_button">DOUBLE OUT</string>
     <string name="master_out_button">MASTER OUT</string>
+
+    <string name="total_point_textview">TOTAL：</string>
+    <string name="total_point_edittext">1~180</string>
+    <string name="first_point_textview">FIRST：</string>
+    <string name="second_point_textview">SECOND：</string>
+    <string name="third_point_textview">THIRD：</string>
+    <string name="number_edittext">1~20</string>
+    <string name="submit_button">OK</string>
+    <string name="delete_button">DELETE</string>
 </resources>

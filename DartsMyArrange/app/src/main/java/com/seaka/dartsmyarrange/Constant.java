@@ -68,4 +68,53 @@ public class Constant {
             return -1;
         }
     }
+
+    public static class InputType {
+        public  static final int    I_CREATE = 0;
+        public  static final int    I_UPDATE = 1;
+        public  static final String S_CREATE = "CREATE";
+        public  static final String S_UPDATE = "UPDATE";
+        private static final String[] LIST   = {S_CREATE, S_UPDATE};
+        public  static final String getString(int i) {
+            return LIST[i];
+        }
+        public static final int getIndex(String s) {
+            int i = 0;
+            for(String item: LIST) {
+                if(item == s) {
+                    return i;
+                }
+                i++;
+            }
+            return -1;
+        }
+    }
+
+
+    public static class PointType {
+        public  static final int    I_NULL   = 0;
+        public  static final int    I_SINGLE = 1;
+        public  static final int    I_DOUBLE = 2;
+        public  static final int    I_TRIPLE = 3;
+        public  static final int    I_BULL   = 4;
+        public  static final String S_NULL   = "NULL";
+        public  static final String S_SINGLE = "S";
+        public  static final String S_DOUBLE = "D";
+        public  static final String S_TRIPLE = "T";
+        public  static final String S_BULL   = "BULL";
+        private static final String[] LIST   = {S_NULL, S_SINGLE, S_DOUBLE, S_TRIPLE, S_BULL};
+        public  static final String getString(int i) {
+            return LIST[i];
+        }
+        public static final int getIndex(String s) {
+            int i = 0;
+            for(String item: LIST) {
+                if(item == s) {
+                    return i;
+                }
+                i++;
+            }
+            return -1;
+        }
+    }
 }

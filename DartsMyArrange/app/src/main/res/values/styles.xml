@@ -2,9 +2,7 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:textSize">40sp</item>
-        <item name="android:fontFamily">@font/changa_medium</item>
-        <item name="android:textColor">@color/white_color</item>
+
     </style>
 
     <!-- Toolbar -->

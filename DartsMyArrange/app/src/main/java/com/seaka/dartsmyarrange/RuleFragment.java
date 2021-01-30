@@ -38,7 +38,7 @@ public class RuleFragment extends Fragment {
 
 
     /**
-     * コンストラクター
+     * コンストラクタ
      * @param mode
      */
     public RuleFragment(int mode) {

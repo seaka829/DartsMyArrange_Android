@@ -1,6 +1,7 @@
 package com.seaka.dartsmyarrange;
 
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -8,11 +9,14 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import java.util.ArrayList;
 
@@ -42,7 +46,7 @@ public class ListFragment extends Fragment {
 
 
     /**
-     * コンストラクター
+     * コンストラクタ
      * @param rule
      */
     public ListFragment(int rule) {
@@ -99,7 +103,7 @@ public class ListFragment extends Fragment {
     private void getItems() {
         // テストデータ
         items = new ArrayList<>();
-        items.add(new ArrangeItem(0, 180, 3, 20, 3, 20, 3, 20));
+        items.add(new ArrangeItem(0, 150, 3, 20, 3, 20, 3, 20));
         items.add(new ArrangeItem(0, 180, 3, 20, 3, 20, 3, 20));
         items.add(new ArrangeItem(0, 180, 3, 20, 3, 20, 3, 20));
         items.add(new ArrangeItem(0, 180, 3, 20, 3, 20, 3, 20));
@@ -122,5 +126,21 @@ public class ListFragment extends Fragment {
         listview = getActivity().findViewById(R.id.listview);
         ListAdapter adapter = new ListAdapter(getActivity(), R.layout.list_item, items);
         listview.setAdapter(adapter);
+        listview.setOnItemClickListener(onItemClickListener);
     }
+
+
+    /**
+     * リストビュークリック時の処理
+     */
+    AdapterView.OnItemClickListener onItemClickListener = new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.addToBackStack("");
+            fragmentTransaction.replace(R.id.container,  EditFragment.newInstance(items.get(position), rule, Constant.InputType.I_UPDATE));
+            fragmentTransaction.commit();
+        }
+    };
 }
