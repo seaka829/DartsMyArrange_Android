@@ -1,6 +1,8 @@
 package com.seaka.dartsmyarrange;
 
 
+import androidx.core.content.ContextCompat;
+
 /**
  * アレンジ情報のクラス
  */
@@ -209,6 +211,9 @@ public class ArrangeItem {
 
     public void setFirstType(int firstType) {
         this.firstType = firstType;
+        if(firstType==Constant.PointType.I_NULL || firstType==Constant.PointType.I_BULL) {
+            setFirstNumber(0);
+        }
     }
 
     public int getFirstNumber() {
@@ -225,6 +230,9 @@ public class ArrangeItem {
 
     public void setSecondType(int secondType) {
         this.secondType = secondType;
+        if(secondType==Constant.PointType.I_NULL || secondType==Constant.PointType.I_BULL) {
+            setSecondNumber(0);
+        }
     }
 
     public int getSecondNumber() {
@@ -241,6 +249,9 @@ public class ArrangeItem {
 
     public void setThirdType(int thirdType) {
         this.thirdType = thirdType;
+        if(thirdType==Constant.PointType.I_NULL || thirdType==Constant.PointType.I_BULL) {
+            setThirdNumber(0);
+        }
     }
 
     public int getThirdNumber() {

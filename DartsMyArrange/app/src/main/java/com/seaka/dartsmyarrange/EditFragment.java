@@ -221,10 +221,10 @@ public class EditFragment extends Fragment {
      * エディットテキスト変更時の処理を設定
      */
     private void setEdittext() {
-        totalPointEdittext.addTextChangedListener(textWatcher);
-        firstNumberEdittext.addTextChangedListener(textWatcher);
-        secondNumberEdittext.addTextChangedListener(textWatcher);
-        thirdNumberEdittext.addTextChangedListener(textWatcher);
+        totalPointEdittext.addTextChangedListener(textWatcherTp);
+        firstNumberEdittext.addTextChangedListener(textWatcherFn);
+        secondNumberEdittext.addTextChangedListener(textWatcherSn);
+        thirdNumberEdittext.addTextChangedListener(textWatcherTn);
     }
 
 
@@ -266,17 +266,13 @@ public class EditFragment extends Fragment {
 
 
     /**
-     * エディットテキスト入力時の処理
+     * 合計得点のエディットテキスト入力時の処理
      */
-    private TextWatcher textWatcher = new TextWatcher() {
+    private TextWatcher textWatcherTp = new TextWatcher() {
         @Override
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-        }
-
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
         @Override
-        public void onTextChanged(CharSequence s, int start, int before, int count) {
-        }
-
+        public void onTextChanged(CharSequence s, int start, int before, int count) { }
         @Override
         public void afterTextChanged(Editable editable) {
             // エディット変更時にitemに値を保存
@@ -286,18 +282,62 @@ public class EditFragment extends Fragment {
             catch (NumberFormatException e) {
                 item.setTotalPoint(0);
             }
+        }
+    };
+
+
+    /**
+     * 一投目ナンバーのエディットテキスト入力時の処理
+     */
+    private TextWatcher textWatcherFn = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) { }
+        @Override
+        public void afterTextChanged(Editable editable) {
+            // エディット変更時にitemに値を保存
             try {
                 item.setFirstNumber(Integer.parseInt(firstNumberEdittext.getText().toString()));
-            }
-            catch (NumberFormatException e) {
+            } catch (NumberFormatException e) {
                 item.setFirstNumber(0);
             }
+        }
+    };
+
+
+    /**
+     * 二投目ナンバーのエディットテキスト入力時の処理
+     */
+    private TextWatcher textWatcherSn = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) { }
+        @Override
+        public void afterTextChanged(Editable editable) {
+            // エディット変更時にitemに値を保存
             try {
                 item.setSecondNumber(Integer.parseInt(secondNumberEdittext.getText().toString()));
             }
             catch (NumberFormatException e) {
                 item.setSecondNumber(0);
             }
+        }
+    };
+
+
+    /**
+     * 三投目ナンバーのエディットテキスト入力時の処理
+     */
+    private TextWatcher textWatcherTn = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) { }
+        @Override
+        public void afterTextChanged(Editable editable) {
+            // エディット変更時にitemに値を保存
             try {
                 item.setThirdNumber(Integer.parseInt(thirdNumberEdittext.getText().toString()));
             }
