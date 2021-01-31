@@ -45,6 +45,11 @@ public class DatabaseAdapter {
             sqLiteDatabase.execSQL(CREATE_SGL_TABLE);
             sqLiteDatabase.execSQL(CREATE_DBL_TABLE);
             sqLiteDatabase.execSQL(CREATE_MST_TABLE);
+
+            // 初回のみデフォルトデータをインサート
+            sqLiteDatabase.execSQL(INSERT_SGL_TABLE_DEF_DATA);
+            sqLiteDatabase.execSQL(INSERT_DBL_TABLE_DEF_DATA);
+            sqLiteDatabase.execSQL(INSERT_MST_TABLE_DEF_DATA);
         }
 
 
@@ -80,14 +85,17 @@ public class DatabaseAdapter {
         if(rule == Constant.Rule.I_SINGLE_OUT) {
             sqLiteDatabase.execSQL(DROP_SGL_TABLE);
             sqLiteDatabase.execSQL(CREATE_SGL_TABLE);
+            sqLiteDatabase.execSQL(INSERT_SGL_TABLE_DEF_DATA);
         }
         else if(rule == Constant.Rule.I_DOUBLE_OUT) {
             sqLiteDatabase.execSQL(DROP_DBL_TABLE);
             sqLiteDatabase.execSQL(CREATE_DBL_TABLE);
+            sqLiteDatabase.execSQL(INSERT_DBL_TABLE_DEF_DATA);
         }
         else if(rule == Constant.Rule.I_MASTER_OUT) {
             sqLiteDatabase.execSQL(DROP_MST_TABLE);
             sqLiteDatabase.execSQL(CREATE_MST_TABLE);
+            sqLiteDatabase.execSQL(INSERT_MST_TABLE_DEF_DATA);
         }
     }
 

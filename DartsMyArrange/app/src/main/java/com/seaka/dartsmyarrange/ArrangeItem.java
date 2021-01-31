@@ -1,8 +1,6 @@
 package com.seaka.dartsmyarrange;
 
 
-import androidx.core.content.ContextCompat;
-
 /**
  * アレンジ情報のクラス
  */

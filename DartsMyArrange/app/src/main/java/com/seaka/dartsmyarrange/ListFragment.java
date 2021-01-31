@@ -1,7 +1,6 @@
 package com.seaka.dartsmyarrange;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.database.Cursor;
 import android.os.Bundle;
