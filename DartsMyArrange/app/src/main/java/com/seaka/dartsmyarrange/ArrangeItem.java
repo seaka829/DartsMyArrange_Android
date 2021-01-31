@@ -19,6 +19,20 @@ public class ArrangeItem {
 
     /**
      * コンストラクタ
+     */
+    public ArrangeItem() {
+        setTotalPoint(0);
+        setFirstType(Constant.PointType.I_NULL);
+        setFirstNumber(0);
+        setSecondType(Constant.PointType.I_NULL);
+        setSecondNumber(0);
+        setThirdType(Constant.PointType.I_NULL);
+        setThirdNumber(0);
+    }
+
+
+    /**
+     * コンストラクタ
      * @param id
      * @param totalPoint
      * @param firstType
@@ -64,7 +78,7 @@ public class ArrangeItem {
             strFirstPoint = Constant.PointType.getString(firstType) + String.valueOf(firstNumber);
         }
 
-        // 二投目の
+        // 二投目の点数
         String strSecondPoint;
         if (secondType==Constant.PointType.I_NULL || secondType==Constant.PointType.I_BULL) {
             strSecondPoint = Constant.PointType.getString(secondType);
@@ -73,7 +87,7 @@ public class ArrangeItem {
             strSecondPoint = Constant.PointType.getString(secondType) + String.valueOf(secondNumber);
         }
 
-        // 三投目の
+        // 三投目の点数
         String strThirdPoint;
         if (thirdType==Constant.PointType.I_NULL || thirdType==Constant.PointType.I_BULL) {
             strThirdPoint = Constant.PointType.getString(thirdType);
@@ -86,6 +100,89 @@ public class ArrangeItem {
         String[] strPoint = {strTotalPoint, strFirstPoint, strSecondPoint, strThirdPoint};
 
         return strPoint;
+    }
+
+
+    /**
+     * 得点を数値(配列)として取得
+     * int[0]...合計点数
+     * int[1]...一投目の点数
+     * int[2]...二投目の点数
+     * int[3]...三投目の点数
+     * @return int[]
+     */
+    public int[] getIntPoint() {
+        // 合計点数
+        int intTotalPoint = totalPoint;
+
+        // 一投目の点数
+        int intFirstPoint;
+        if(firstType == Constant.PointType.I_BULL) {
+            intFirstPoint = 50;
+        }
+        else {
+            intFirstPoint = firstType * firstNumber;
+        }
+
+        // 二投目の点数
+        int intSecondPoint;
+        if(secondType == Constant.PointType.I_BULL) {
+            intSecondPoint = 50;
+        }
+        else {
+            intSecondPoint = secondType * secondNumber;
+        }
+
+        // 三投目の点数
+        int intThirdPoint;
+        if(thirdType == Constant.PointType.I_BULL) {
+            intThirdPoint = 50;
+        }
+        else {
+            intThirdPoint = thirdType * thirdNumber;
+        }
+
+        // 配列の生成
+        int[] intPoint = {intTotalPoint, intFirstPoint, intSecondPoint, intThirdPoint};
+
+        return intPoint;
+    }
+
+
+    /**
+     * 登録時のチェック処理
+     * @return int
+     */
+    public int checkReg() {
+
+        // 範囲内チェック
+        if(totalPoint<1 || totalPoint>180) {
+            return Constant.ErrType.I_RANGE_ERR;
+        }
+        if(firstType!=Constant.PointType.I_NULL && firstType!=Constant.PointType.I_BULL) {
+            if(firstNumber  < 1 || firstNumber  > 20) {
+                return Constant.ErrType.I_RANGE_ERR;
+            }
+        }
+        if(secondType!=Constant.PointType.I_NULL && secondType!=Constant.PointType.I_BULL) {
+            if(secondNumber  < 1 || secondNumber  > 20) {
+                return Constant.ErrType.I_RANGE_ERR;
+            }
+        }
+        if(thirdType!=Constant.PointType.I_NULL && thirdType!=Constant.PointType.I_BULL) {
+            if(thirdNumber  < 1 || thirdNumber  > 20) {
+                return Constant.ErrType.I_RANGE_ERR;
+            }
+        }
+
+        // 計算チェック
+        int point[] = getIntPoint();
+        if(point[0]-point[1]-point[2]-point[3] != 0) {
+            return Constant.ErrType.I_CALC_ERR;
+        };
+
+        // エラーなし
+        return Constant.ErrType.I_NONE_ERR;
     }
 
 
@@ -112,11 +209,6 @@ public class ArrangeItem {
 
     public void setFirstType(int firstType) {
         this.firstType = firstType;
-
-        // 一投目のナンバーを0に設定
-        if(firstType==Constant.PointType.I_NULL || firstType==Constant.PointType.I_BULL) {
-            this.firstNumber = 0;
-        }
     }
 
     public int getFirstNumber() {
@@ -133,11 +225,6 @@ public class ArrangeItem {
 
     public void setSecondType(int secondType) {
         this.secondType = secondType;
-
-        // 二投目のナンバーを0に設定
-        if(secondType==Constant.PointType.I_NULL || secondType==Constant.PointType.I_BULL) {
-            this.secondNumber = 0;
-        }
     }
 
     public int getSecondNumber() {
@@ -154,11 +241,6 @@ public class ArrangeItem {
 
     public void setThirdType(int thirdType) {
         this.thirdType = thirdType;
-
-        // 三投目のナンバーを0に設定
-        if(thirdType==Constant.PointType.I_NULL || thirdType==Constant.PointType.I_BULL) {
-            this.thirdNumber = 0;
-        }
     }
 
     public int getThirdNumber() {

@@ -7,10 +7,10 @@
     <string name="double_out_button">DOUBLE OUT</string>
     <string name="master_out_button">MASTER OUT</string>
 
-    <string name="total_point_textview">TOTAL：</string>
-    <string name="first_point_textview">FIRST：</string>
-    <string name="second_point_textview">SECOND：</string>
-    <string name="third_point_textview">THIRD：</string>
+    <string name="total_point_textview">TOTAL</string>
+    <string name="first_point_textview">FIRST</string>
+    <string name="second_point_textview">SECOND</string>
+    <string name="third_point_textview">THIRD</string>
     <string name="total_point_edittext">1~180</string>
     <string name="number_edittext">1~20</string>
     <string name="submit_button">OK</string>
@@ -22,4 +22,8 @@
         <item>T</item>
         <item>BULL</item>
     </string-array>
+    <string name="reg_msg">登録しました</string>
+    <string name="reg_err_msg1">値が範囲外です</string>
+    <string name="reg_err_msg2">計算が合いません</string>
+    <string name="delete_msg">削除しました</string>
 </resources>

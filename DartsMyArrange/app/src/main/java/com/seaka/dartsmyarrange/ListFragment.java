@@ -31,7 +31,7 @@ public class ListFragment extends Fragment {
     private ArrayList<ArrangeItem> items;       //アレンジ情報一覧
 
     // 設定値
-    private int rule;           // ルール
+    private int rule;   // ルール
 
 
     /**
@@ -86,7 +86,12 @@ public class ListFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.add_button) {
-            Log.d("test", "追加");
+            // 編集画面へ遷移
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.addToBackStack("");
+            fragmentTransaction.replace(R.id.container,  EditFragment.newInstance(new ArrangeItem(), rule, Constant.InputType.I_CREATE));
+            fragmentTransaction.commit();
         }
         else if(item.getItemId() == R.id.delete_button) {
             Log.d("test", "削除");
@@ -135,6 +140,7 @@ public class ListFragment extends Fragment {
     AdapterView.OnItemClickListener onItemClickListener = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            // 編集画面へ遷移
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.addToBackStack("");

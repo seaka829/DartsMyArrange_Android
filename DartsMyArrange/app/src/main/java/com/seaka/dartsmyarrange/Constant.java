@@ -94,7 +94,6 @@ public class Constant {
         }
     }
 
-
     public static class PointType {
         public  static final int    I_NULL   = 0;
         public  static final int    I_SINGLE = 1;
@@ -107,6 +106,29 @@ public class Constant {
         public  static final String S_TRIPLE = "T";
         public  static final String S_BULL   = "BULL";
         private static final String[] LIST   = {S_NULL, S_SINGLE, S_DOUBLE, S_TRIPLE, S_BULL};
+        public  static final String getString(int i) {
+            return LIST[i];
+        }
+        public static final int getIndex(String s) {
+            int i = 0;
+            for(String item: LIST) {
+                if(item == s) {
+                    return i;
+                }
+                i++;
+            }
+            return -1;
+        }
+    }
+
+    public static class ErrType {
+        public  static final int    I_NONE_ERR  = 0;
+        public  static final int    I_RANGE_ERR = 1;
+        public  static final int    I_CALC_ERR  = 2;
+        public  static final String S_NONE_ERR  = "NONE_ERR";
+        public  static final String S_RANGE_ERR = "RANGE_ERR";
+        public  static final String S_CALC_ERR  = "ALC_ERR";
+        private static final String[] LIST   = {S_NONE_ERR, S_RANGE_ERR, S_CALC_ERR};
         public  static final String getString(int i) {
             return LIST[i];
         }
