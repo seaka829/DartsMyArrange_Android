@@ -1,5 +1,7 @@
 package com.seaka.dartsmyarrange;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -337,10 +339,22 @@ public class EditFragment extends Fragment {
             // 削除ボタンクリック時
             else if(view.getId() == R.id.delete_button) {
 
-                // 削除処理
-                databaseAdapter.delete(rule, item);
-                Toast.makeText(getActivity(), getResources().getString(R.string.toast_delete_item),Toast.LENGTH_SHORT).show();
-                backFragment();
+                // ダイアログの設定と表示
+                new AlertDialog.Builder(getContext())
+                        .setTitle(getResources().getString(R.string.dialog_title))
+                        .setMessage(getResources().getString(R.string.dialog_message_delete_item))
+                        .setPositiveButton(getResources().getString(R.string.dialog_positive), new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                databaseAdapter.delete(rule, item);
+                                Toast.makeText(getActivity(), getResources().getString(R.string.toast_delete_item),Toast.LENGTH_SHORT).show();
+                                backFragment();
+                            }
+                        })
+                        .setNegativeButton(getResources().getString(R.string.dialog_negative), new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        })
+                        .show();
             }
         }
     };

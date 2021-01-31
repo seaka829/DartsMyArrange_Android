@@ -9,15 +9,6 @@
     <string name="double_out_button">DOUBLE OUT</string>
     <string name="master_out_button">MASTER OUT</string>
 
-    <!-- 一覧画面 -->
-    <string name="dialog_title">確認</string>
-    <string name="dialog_message_single_out">シングルアウトのアレンジ情報を初期化しますか？\n編集したアレンジ情報が全て削除されます。</string>
-    <string name="dialog_message_double_out">ダブルアウトのアレンジ情報を初期化しますか？\n編集したアレンジ情報が全て削除されます。</string>
-    <string name="dialog_message_master_out">マスタアウトのアレンジ情報を初期化しますか？\n編集したアレンジ情報が全て削除されます。</string>
-    <string name="dialog_positive">OK</string>
-    <string name="dialog_negative">CANCEL</string>
-    <string name="toast_init_table">アレンジ情報を初期化しました</string>
-
     <!-- 編集画面 -->
     <string name="total_point_textview">TOTAL</string>
     <string name="first_point_textview">FIRST</string>
@@ -34,6 +25,18 @@
         <item>T</item>
         <item>BULL</item>
     </string-array>
+
+    <!-- ダイアログ -->
+    <string name="dialog_title">確認メッセージ</string>
+    <string name="dialog_message_delete_item">アレンジ情報を削除しますか？</string>
+    <string name="dialog_message_init_single_out">シングルアウトのアレンジ情報を初期化しますか？\n編集したアレンジ情報が全て削除されます。</string>
+    <string name="dialog_message_init_double_out">ダブルアウトのアレンジ情報を初期化しますか？\n編集したアレンジ情報が全て削除されます。</string>
+    <string name="dialog_message_init_master_out">マスタアウトのアレンジ情報を初期化しますか？\n編集したアレンジ情報が全て削除されます。</string>
+    <string name="dialog_positive">OK</string>
+    <string name="dialog_negative">CANCEL</string>
+
+    <!-- トースト -->
+    <string name="toast_init_table">アレンジ情報を初期化しました</string>
     <string name="toast_reg_item">登録しました</string>
     <string name="toast_reg_err1">値が範囲外です</string>
     <string name="toast_reg_err2">計算が合いません</string>

@@ -5,7 +5,6 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,7 +17,6 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -121,13 +119,13 @@ public class ListFragment extends Fragment {
             String dialogMessage = null;
             String toastMessage  = null;
             if(rule == Constant.Rule.I_SINGLE_OUT) {
-                dialogMessage = getResources().getString(R.string.dialog_message_single_out);
+                dialogMessage = getResources().getString(R.string.dialog_message_init_single_out);
             }
             else if(rule == Constant.Rule.I_DOUBLE_OUT) {
-                dialogMessage = getResources().getString(R.string.dialog_message_double_out);
+                dialogMessage = getResources().getString(R.string.dialog_message_init_double_out);
             }
             else if(rule == Constant.Rule.I_MASTER_OUT) {
-                dialogMessage = getResources().getString(R.string.dialog_message_master_out);
+                dialogMessage = getResources().getString(R.string.dialog_message_init_master_out);
             }
 
             // ダイアログの設定と表示
@@ -137,8 +135,8 @@ public class ListFragment extends Fragment {
                     .setPositiveButton(getResources().getString(R.string.dialog_positive), new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             databaseAdapter.initTable(rule);
-                            backFragment();
                             Toast.makeText(getActivity(), getResources().getString(R.string.toast_init_table), Toast.LENGTH_SHORT).show();
+                            backFragment();
                         }
                     })
                     .setNegativeButton(getResources().getString(R.string.dialog_negative), new DialogInterface.OnClickListener() {
