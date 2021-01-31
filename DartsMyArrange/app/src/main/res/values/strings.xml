@@ -1,12 +1,24 @@
 <resources>
+    <!-- トップ画面 -->
     <string name="app_name">DartsMyArrange</string>
     <string name="start_button">START</string>
     <string name="edit_button">EDIT</string>
 
+    <!-- ルール選択画面 -->
     <string name="single_out_button">SINGLE OUT</string>
     <string name="double_out_button">DOUBLE OUT</string>
     <string name="master_out_button">MASTER OUT</string>
 
+    <!-- 一覧画面 -->
+    <string name="dialog_title">確認</string>
+    <string name="dialog_message_single_out">シングルアウトのアレンジ情報を初期化しますか？\n編集したアレンジ情報が全て削除されます。</string>
+    <string name="dialog_message_double_out">ダブルアウトのアレンジ情報を初期化しますか？\n編集したアレンジ情報が全て削除されます。</string>
+    <string name="dialog_message_master_out">マスタアウトのアレンジ情報を初期化しますか？\n編集したアレンジ情報が全て削除されます。</string>
+    <string name="dialog_positive">OK</string>
+    <string name="dialog_negative">CANCEL</string>
+    <string name="toast_init_table">アレンジ情報を初期化しました</string>
+
+    <!-- 編集画面 -->
     <string name="total_point_textview">TOTAL</string>
     <string name="first_point_textview">FIRST</string>
     <string name="second_point_textview">SECOND</string>
@@ -22,8 +34,9 @@
         <item>T</item>
         <item>BULL</item>
     </string-array>
-    <string name="reg_msg">登録しました</string>
-    <string name="reg_err_msg1">値が範囲外です</string>
-    <string name="reg_err_msg2">計算が合いません</string>
-    <string name="delete_msg">削除しました</string>
+    <string name="toast_reg_item">登録しました</string>
+    <string name="toast_reg_err1">値が範囲外です</string>
+    <string name="toast_reg_err2">計算が合いません</string>
+    <string name="toast_delete_item">削除しました</string>
+
 </resources>

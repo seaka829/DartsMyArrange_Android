@@ -43,9 +43,12 @@ public class EditFragment extends Fragment {
     private Button deleteButton;            // 削除ボタン
 
     // 設定値
-    private ArrangeItem item;   // アレンジ情報
-    private int rule;           // ルール
-    private int inputType;      // 入力タイプ
+    private int rule;       // ルール
+    private int inputType;  // 入力タイプ
+
+    // 変数
+    private ArrangeItem item;                   // アレンジ情報
+    private DatabaseAdapter databaseAdapter;    // データベースアダプタ
 
 
     /**
@@ -84,6 +87,10 @@ public class EditFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        // DB接続
+        databaseAdapter = new DatabaseAdapter(getActivity());
+        databaseAdapter.open();
+
         setUi();
         setScreen();
         drawPoint();
@@ -91,6 +98,15 @@ public class EditFragment extends Fragment {
         setEdittext();
         setButton();
         setHasOptionsMenu(true);
+    }
+
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+
+        // DB切断
+        databaseAdapter.close();
     }
 
 
@@ -299,37 +315,44 @@ public class EditFragment extends Fragment {
 
             // OKボタンクリック時
             if(view.getId() == R.id.submit_button) {
-
-                // チェック処理
                 if(item.checkReg() == Constant.ErrType.I_NONE_ERR) {
-                    // 登録処理
-                    Toast.makeText(getActivity(), getResources().getString(R.string.reg_msg), Toast.LENGTH_SHORT).show();
 
-                    // 一つ前のフラグメントに戻る
-                    FragmentManager fragmentManager = getFragmentManager();
-                    if(fragmentManager != null) {
-                        fragmentManager.popBackStack();
+                    // 登録処理
+                    if (inputType == Constant.InputType.I_CREATE) {
+                        databaseAdapter.register(rule, item);
+                    } else if (inputType == Constant.InputType.I_UPDATE) {
+                        databaseAdapter.update(rule, item);
                     }
+                    Toast.makeText(getActivity(), getResources().getString(R.string.toast_reg_item), Toast.LENGTH_SHORT).show();
+                    backFragment();
                 }
                 else if(item.checkReg() == Constant.ErrType.I_RANGE_ERR) {
-                    Toast.makeText(getActivity(), getResources().getString(R.string.reg_err_msg1), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), getResources().getString(R.string.toast_reg_err1), Toast.LENGTH_SHORT).show();
                 }
                 else if(item.checkReg() == Constant.ErrType.I_CALC_ERR) {
-                    Toast.makeText(getActivity(), getResources().getString(R.string.reg_err_msg2), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), getResources().getString(R.string.toast_reg_err2), Toast.LENGTH_SHORT).show();
                 }
             }
 
             // 削除ボタンクリック時
             else if(view.getId() == R.id.delete_button) {
-                // 削除処理
-                Toast.makeText(getActivity(), getResources().getString(R.string.delete_msg),Toast.LENGTH_SHORT).show();
 
-                // 一つ前のフラグメントに戻る
-                FragmentManager fragmentManager = getFragmentManager();
-                if(fragmentManager != null) {
-                    fragmentManager.popBackStack();
-                }
+                // 削除処理
+                databaseAdapter.delete(rule, item);
+                Toast.makeText(getActivity(), getResources().getString(R.string.toast_delete_item),Toast.LENGTH_SHORT).show();
+                backFragment();
             }
         }
     };
+
+
+    /**
+     * 一つ前のフラグメントへ戻る
+     */
+    private void backFragment() {
+        FragmentManager fragmentManager = getFragmentManager();
+        if(fragmentManager != null) {
+            fragmentManager.popBackStack();
+        }
+    }
 }

@@ -1,0 +1,20 @@
+[
+    {
+        "total_point":180,
+        "first_type":3,
+        "first_number":20,
+        "second_type":3,
+        "second_number":20,
+        "third_type":3,
+        "third_number":20
+    },
+    {
+        "total_point":120,
+        "first_type":4,
+        "first_number":0,
+        "second_type":4,
+        "second_number":0,
+        "third_type":1,
+        "third_number":20
+    }
+]
