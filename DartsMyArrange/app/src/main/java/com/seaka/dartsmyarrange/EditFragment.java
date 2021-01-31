@@ -359,6 +359,9 @@ public class EditFragment extends Fragment {
             if(view.getId() == R.id.submit_button) {
                 if(item.checkReg() == Constant.ErrType.I_NONE_ERR) {
 
+                    // オリジナルアレンジとして設定
+                    item.setChanged(true);
+
                     // 登録処理
                     if (inputType == Constant.InputType.I_CREATE) {
                         databaseAdapter.register(rule, item);

@@ -151,6 +151,7 @@ public class DatabaseAdapter {
         contentValues.put(COL_SECOND_NUMBER, item.getSecondNumber());
         contentValues.put(COL_THIRD_TYPE, item.getThirdType());
         contentValues.put(COL_THIRD_NUMBER, item.getThirdNumber());
+        contentValues.put(COL_IS_CHANGED, item.isChanged());
         sqLiteDatabase.insert(table, null, contentValues);
     }
 
@@ -183,6 +184,7 @@ public class DatabaseAdapter {
         contentValues.put(COL_SECOND_NUMBER, item.getSecondNumber());
         contentValues.put(COL_THIRD_TYPE, item.getThirdType());
         contentValues.put(COL_THIRD_NUMBER, item.getThirdNumber());
+        contentValues.put(COL_IS_CHANGED, item.isChanged());
         sqLiteDatabase.update(table, contentValues, COL_ID + " = " + item.getId(), null);
     }
 

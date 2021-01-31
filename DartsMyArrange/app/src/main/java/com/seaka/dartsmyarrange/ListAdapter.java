@@ -5,7 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.core.content.ContextCompat;
 
 import java.util.List;
 
@@ -16,10 +20,11 @@ import java.util.List;
 public class ListAdapter extends ArrayAdapter<ArrangeItem> {
 
     // UI
-    private TextView totalPointTextView;    // 合計点数のテキストビュー
-    private TextView firstPointTextView;    // 一投目点数のテキストビュー
-    private TextView secondPointTextView;   // 二投目点数のテキストビュー
-    private TextView thirdPointTextView;    // 三投目点数のテキストビュー
+    private TextView  totalPointTextView;    // 合計点数のテキストビュー
+    private TextView  firstPointTextView;    // 一投目点数のテキストビュー
+    private TextView  secondPointTextView;   // 二投目点数のテキストビュー
+    private TextView  thirdPointTextView;    // 三投目点数のテキストビュー
+    private ImageView dartsImageView;        // 変更有無のダーツ
 
     // 変数
     private int               resource;
@@ -61,12 +66,20 @@ public class ListAdapter extends ArrayAdapter<ArrangeItem> {
         firstPointTextView = view.findViewById(R.id.first_point_textview);
         secondPointTextView = view.findViewById(R.id.second_point_textview);
         thirdPointTextView = view.findViewById(R.id.third_point_textview);
+        dartsImageView = view.findViewById(R.id.darts_imageview);
 
         // UIの設定
         totalPointTextView.setText(strPoint[0]);
         firstPointTextView.setText(strPoint[1]);
         secondPointTextView.setText(strPoint[2]);
         thirdPointTextView.setText(strPoint[3]);
+
+        if(item.isChanged()) {
+            dartsImageView.setVisibility(View.VISIBLE);
+        }
+        else {
+            dartsImageView.setVisibility(View.GONE);
+        }
 
         return view;
     }

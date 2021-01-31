@@ -7,15 +7,15 @@ package com.seaka.dartsmyarrange;
 public class ArrangeItem {
 
     // 変数
-    private int id;             // ユニークID
-    private int totalPoint;     // 合計得点
-    private int firstType;      // 一投目の倍率
-    private int firstNumber;    // 一投目のナンバー
-    private int secondType;     // 二投目の倍率
-    private int secondNumber;   // 二投目のナンバー
-    private int thirdType;      // 三投目の倍率
-    private int thirdNumber;    // 三投目のナンバー
-
+    private int     id;             // ユニークID
+    private int     totalPoint;     // 合計得点
+    private int     firstType;      // 一投目の倍率
+    private int     firstNumber;    // 一投目のナンバー
+    private int     secondType;     // 二投目の倍率
+    private int     secondNumber;   // 二投目のナンバー
+    private int     thirdType;      // 三投目の倍率
+    private int     thirdNumber;    // 三投目のナンバー
+    private boolean isChanged;      // 変更有無
 
     /**
      * コンストラクタ
@@ -45,7 +45,8 @@ public class ArrangeItem {
     public ArrangeItem(int id,         int totalPoint,
                        int firstType,  int firstNumber,
                        int secondType, int secondNumber,
-                       int thirdType,  int thirdNumber) {
+                       int thirdType,  int thirdNumber,
+                       boolean isChanged) {
         setId(id);
         setTotalPoint(totalPoint);
         setFirstType(firstType);
@@ -54,6 +55,7 @@ public class ArrangeItem {
         setSecondNumber(secondNumber);
         setThirdType(thirdType);
         setThirdNumber(thirdNumber);
+        setChanged(isChanged);
     }
 
 
@@ -258,5 +260,13 @@ public class ArrangeItem {
 
     public void setThirdNumber(int thirdNumber) {
         this.thirdNumber = thirdNumber;
+    }
+
+    public boolean isChanged() {
+        return isChanged;
+    }
+
+    public void setChanged(boolean changed) {
+        isChanged = changed;
     }
 }

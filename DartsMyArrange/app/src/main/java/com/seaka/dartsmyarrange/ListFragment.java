@@ -171,6 +171,7 @@ public class ListFragment extends Fragment {
                         ,cursor.getInt(cursor.getColumnIndex(DatabaseInfo.COL_SECOND_NUMBER))
                         ,cursor.getInt(cursor.getColumnIndex(DatabaseInfo.COL_THIRD_TYPE))
                         ,cursor.getInt(cursor.getColumnIndex(DatabaseInfo.COL_THIRD_NUMBER))
+                        ,cursor.getInt(cursor.getColumnIndex(DatabaseInfo.COL_IS_CHANGED))==1
                 ));
             }
             while (cursor.moveToNext());
