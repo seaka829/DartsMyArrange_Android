@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -29,19 +30,20 @@ import androidx.fragment.app.FragmentManager;
 public class EditFragment extends Fragment {
 
     // UI
-    private Toolbar toolbar;                // 合計得点
-    private TextView firstTypeTextview;     // 一投目の倍率
-    private TextView secondTypeTextview;    // 二投目の倍率
-    private TextView thirdTypeTextview;     // 三投目の倍率
-    private Spinner firstTypeSpinner;       // 一投目のスピナー
-    private Spinner secondTypeSpinner;      // 二投目のスピナー
-    private Spinner thirdTypeSpinner;       // 三投目のスピナー
-    private EditText totalPointEdittext;    // 合計点数
-    private EditText firstNumberEdittext;   // 一投目のナンバー
-    private EditText secondNumberEdittext;  // 二投目のナンバー
-    private EditText thirdNumberEdittext;   // 三投目のナンバー
-    private Button submitButton;            // 決定ボタン
-    private Button deleteButton;            // 削除ボタン
+    private Toolbar toolbar;                        // 合計得点
+    private TextView firstTypeTextview;             // 一投目の倍率
+    private TextView secondTypeTextview;            // 二投目の倍率
+    private TextView thirdTypeTextview;             // 三投目の倍率
+    private Spinner firstTypeSpinner;               // 一投目のスピナー
+    private Spinner secondTypeSpinner;              // 二投目のスピナー
+    private Spinner thirdTypeSpinner;               // 三投目のスピナー
+    private EditText totalPointEdittext;            // 合計点数
+    private EditText firstNumberEdittext;           // 一投目のナンバー
+    private EditText secondNumberEdittext;          // 二投目のナンバー
+    private EditText thirdNumberEdittext;           // 三投目のナンバー
+    private Button submitButton;                    // 決定ボタン
+    private Button deleteButton;                    // 削除ボタン
+    private ConstraintLayout deleteButtonParent;    // 削除ボタンの親レイアウト
 
     // 設定値
     private int rule;       // ルール
@@ -131,6 +133,7 @@ public class EditFragment extends Fragment {
         thirdNumberEdittext = getView().findViewById(R.id.third_number_edittext);
         submitButton = getView().findViewById(R.id.submit_button);
         deleteButton = getView().findViewById(R.id.delete_button);
+        deleteButtonParent = getView().findViewById(R.id.delete_button_parent);
     }
 
     /**
@@ -142,14 +145,14 @@ public class EditFragment extends Fragment {
             totalPointEdittext.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.main_border));
             totalPointEdittext.setTextColor(ContextCompat.getColor(getContext(), R.color.main_color));
             totalPointEdittext.setEnabled(true);
-            deleteButton.setVisibility(View.GONE);
+            deleteButtonParent.setVisibility(View.GONE);
         }
         else if(inputType == Constant.InputType.I_UPDATE) {
             // 入力不可能に設定
             totalPointEdittext.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.main_color));
             totalPointEdittext.setTextColor(ContextCompat.getColor(getContext(), R.color.white_color));
             totalPointEdittext.setEnabled(false);
-            deleteButton.setVisibility(View.VISIBLE);
+            deleteButtonParent.setVisibility(View.VISIBLE);
         }
     }
 
@@ -271,7 +274,6 @@ public class EditFragment extends Fragment {
         }
     };
 
-
     /**
      * 一投目ナンバーのエディットテキスト入力時の処理
      */
@@ -312,7 +314,6 @@ public class EditFragment extends Fragment {
         }
     };
 
-
     /**
      * 三投目ナンバーのエディットテキスト入力時の処理
      */
@@ -332,7 +333,6 @@ public class EditFragment extends Fragment {
             }
         }
     };
-
 
     /**
      * ボタンクリック時の処理
@@ -387,7 +387,6 @@ public class EditFragment extends Fragment {
             }
         }
     };
-
 
     /**
      * 一つ前のフラグメントへ戻る
