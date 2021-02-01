@@ -23,12 +23,10 @@ public class DatabaseAdapter {
         databaseHelper = new DatabaseHelper(this.context);
     }
 
-
     /**
      * データベースアクセスクラス
      */
     private static class DatabaseHelper extends SQLiteOpenHelper {
-
 
         /**
          * コンストラクタ
@@ -37,7 +35,6 @@ public class DatabaseAdapter {
         public DatabaseHelper(Context context) {
             super(context, DATABASE_NAME, null, DATABASE_VERSION);
         }
-
 
         @Override
         public void onCreate(SQLiteDatabase sqLiteDatabase) {
@@ -52,12 +49,10 @@ public class DatabaseAdapter {
             sqLiteDatabase.execSQL(INSERT_MST_TABLE_DEF_DATA);
         }
 
-
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         }
     }
-
 
     /**
      * データベースとの接続
@@ -68,14 +63,12 @@ public class DatabaseAdapter {
         return this;
     }
 
-
     /**
      * データベースとの切断
      */
     public void close(){
         databaseHelper.close();
     }
-
 
     /**
      * 選択したルールのアレンジ情報を初期化
@@ -99,7 +92,6 @@ public class DatabaseAdapter {
         }
     }
 
-
     /**
      * 指定したルールのアレンジ一覧を取得
      * @param rule
@@ -121,7 +113,6 @@ public class DatabaseAdapter {
         // 選択したテーブルの全データを取得
         return sqLiteDatabase.query(table, null, null, null, null, null, COL_TOTAL_POINT + " DESC");
     }
-
 
     /**
      * アレンジ情報の新規登録
@@ -155,7 +146,6 @@ public class DatabaseAdapter {
         sqLiteDatabase.insert(table, null, contentValues);
     }
 
-
     /**
      * アレンジ情報の更新
      * @param rule
@@ -187,7 +177,6 @@ public class DatabaseAdapter {
         contentValues.put(COL_IS_CHANGED, item.isChanged());
         sqLiteDatabase.update(table, contentValues, COL_ID + " = " + item.getId(), null);
     }
-
 
     /**
      * アレンジ情報の削除
