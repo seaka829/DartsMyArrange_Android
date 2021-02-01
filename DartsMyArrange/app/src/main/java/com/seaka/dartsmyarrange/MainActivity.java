@@ -5,7 +5,6 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 
-
 /**
  * アクティビティ
  */
@@ -13,7 +12,6 @@ public class MainActivity extends AppCompatActivity {
 
     // UI
     private Toolbar toolbar;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,6 +1,5 @@
 package com.seaka.dartsmyarrange;
 
-
 /**
  * アレンジ情報のクラス
  */
@@ -30,7 +29,6 @@ public class ArrangeItem {
         setThirdNumber(0);
     }
 
-
     /**
      * コンストラクタ
      * @param id
@@ -57,7 +55,6 @@ public class ArrangeItem {
         setThirdNumber(thirdNumber);
         setChanged(isChanged);
     }
-
 
     /**
      * 得点を文字列(配列)として取得
@@ -104,7 +101,6 @@ public class ArrangeItem {
         return strPoint;
     }
 
-
     /**
      * 得点を数値(配列)として取得
      * int[0]...合計点数
@@ -149,7 +145,6 @@ public class ArrangeItem {
 
         return intPoint;
     }
-
 
     /**
      * 登録時のチェック処理

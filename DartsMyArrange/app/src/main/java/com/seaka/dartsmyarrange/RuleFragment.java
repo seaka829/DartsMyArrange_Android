@@ -11,7 +11,6 @@ import android.widget.LinearLayout;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
-
 /**
  * ルール選択画面のフラグメント
  */
@@ -26,7 +25,6 @@ public class RuleFragment extends Fragment {
     // 設定値
     private int mode;   // モード
 
-
     /**
      * インスタンスの生成
      * @param mode
@@ -36,7 +34,6 @@ public class RuleFragment extends Fragment {
         return new RuleFragment(mode);
     }
 
-
     /**
      * コンストラクタ
      * @param mode
@@ -45,13 +42,11 @@ public class RuleFragment extends Fragment {
         this.mode = mode;
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         return inflater.inflate(R.layout.rule_fragment, container, false);
     }
-
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -61,7 +56,6 @@ public class RuleFragment extends Fragment {
         setHasOptionsMenu(true);
     }
 
-
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         // ツールバーの設定
@@ -70,7 +64,6 @@ public class RuleFragment extends Fragment {
         toolbar.setLayoutParams(toolbarLayoutParams);
         toolbar.setTitle(null);
     }
-
 
     /**
      * UIの設定

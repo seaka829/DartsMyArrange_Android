@@ -9,10 +9,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.core.content.ContextCompat;
-
 import java.util.List;
-
 
 /**
  * アレンジ一覧画面にアイテムを表示するためのアダプタ
@@ -31,7 +28,6 @@ public class ListAdapter extends ArrayAdapter<ArrangeItem> {
     private List<ArrangeItem> items;
     private LayoutInflater    layoutInflater;
 
-
     /**
      * コンストラクタ
      * @param context
@@ -45,7 +41,6 @@ public class ListAdapter extends ArrayAdapter<ArrangeItem> {
         this.items     = items;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
-
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {

@@ -23,7 +23,6 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-
 /**
  * アレンジ編集画面のフラグメント
  */
@@ -52,7 +51,6 @@ public class EditFragment extends Fragment {
     private ArrangeItem item;                   // アレンジ情報
     private DatabaseAdapter databaseAdapter;    // データベースアダプタ
 
-
     /**
      * インスタンスの生成
      * @param item
@@ -63,7 +61,6 @@ public class EditFragment extends Fragment {
     public static EditFragment newInstance(ArrangeItem item, int rule, int inputType) {
         return new EditFragment(item, rule, inputType);
     }
-
 
     /**
      * コンストラクタ
@@ -77,13 +74,11 @@ public class EditFragment extends Fragment {
         this.inputType = inputType;
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         return inflater.inflate(R.layout.edit_fragment, container, false);
     }
-
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -102,7 +97,6 @@ public class EditFragment extends Fragment {
         setHasOptionsMenu(true);
     }
 
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();
@@ -111,7 +105,6 @@ public class EditFragment extends Fragment {
         databaseAdapter.close();
     }
 
-
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         // ツールバーの設定
@@ -119,7 +112,6 @@ public class EditFragment extends Fragment {
         toolbar.setLayoutParams(toolbarLayoutParams);
         toolbar.setTitle(Constant.Rule.getString(rule));
     }
-
 
     /**
      * UIの設定
@@ -141,7 +133,6 @@ public class EditFragment extends Fragment {
         deleteButton = getView().findViewById(R.id.delete_button);
     }
 
-
     /**
      * 入力タイプより画面の設定
      */
@@ -161,7 +152,6 @@ public class EditFragment extends Fragment {
             deleteButton.setVisibility(View.VISIBLE);
         }
     }
-
 
     /**
      * 点数の描画
@@ -206,7 +196,6 @@ public class EditFragment extends Fragment {
         }
     }
 
-
     /**
      * スピナー項目変更時の処理を設定
      */
@@ -227,7 +216,6 @@ public class EditFragment extends Fragment {
         thirdNumberEdittext.addTextChangedListener(textWatcherTn);
     }
 
-
     /**
      * ボタンクリック時の設定
      */
@@ -235,7 +223,6 @@ public class EditFragment extends Fragment {
         submitButton.setOnClickListener(onClickListener);
         deleteButton.setOnClickListener(onClickListener);
     }
-
 
     /**
      * スピナークリック時の処理
@@ -263,7 +250,6 @@ public class EditFragment extends Fragment {
         public void onNothingSelected(AdapterView<?> parent) {
         }
     };
-
 
     /**
      * 合計得点のエディットテキスト入力時の処理

@@ -48,7 +48,6 @@ public class DartsEffectButton extends ConstraintLayout {
         setUi();
     }
 
-
     /**
      * UIの設定
      */
@@ -111,7 +110,6 @@ public class DartsEffectButton extends ConstraintLayout {
         this.addView(icon);
     }
 
-
     /**
      * ダーツエフェクトボタンクリック時の処理
      */
@@ -129,7 +127,6 @@ public class DartsEffectButton extends ConstraintLayout {
             }, animationSpeed+100);
         }
     };
-
 
     /**
      * ダーツアイコンのアニメーション
@@ -155,7 +152,6 @@ public class DartsEffectButton extends ConstraintLayout {
         objectAnimator.start();
     }
 
-
     /**
      * 遷移処理
      */
@@ -167,7 +163,6 @@ public class DartsEffectButton extends ConstraintLayout {
             fragmentTransaction.commit();
         }
     }
-
 
     /**
      * 遷移先の設定
@@ -187,7 +182,6 @@ public class DartsEffectButton extends ConstraintLayout {
     public void setText(int text) {
         button.setText(getResources().getString(text));
     }
-
 
     /**
      * ダーツエフェクトボタンの色設定

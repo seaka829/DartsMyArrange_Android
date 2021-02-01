@@ -22,7 +22,6 @@ import androidx.fragment.app.FragmentTransaction;
 
 import java.util.ArrayList;
 
-
 /**
  * アレンジリスト一覧画面のフラグメント
  */
@@ -39,7 +38,6 @@ public class ListFragment extends Fragment {
     private ArrayList<ArrangeItem> items;       // アレンジ情報一覧
     private DatabaseAdapter databaseAdapter;    // データベースアダプタ
 
-
     /**
      * インスタンスの生成
      * @param rule
@@ -49,7 +47,6 @@ public class ListFragment extends Fragment {
         return new ListFragment(rule);
     }
 
-
     /**
      * コンストラクタ
      * @param rule
@@ -58,13 +55,11 @@ public class ListFragment extends Fragment {
         this.rule = rule;
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         return inflater.inflate(R.layout.list_fragment, container, false);
     }
-
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -79,7 +74,6 @@ public class ListFragment extends Fragment {
         setHasOptionsMenu(true);
     }
 
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();
@@ -87,7 +81,6 @@ public class ListFragment extends Fragment {
         // DB切断
         databaseAdapter.close();
     }
-
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -100,7 +93,6 @@ public class ListFragment extends Fragment {
         // メニューの表示
         inflater.inflate(R.menu.menu_item, menu);
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -148,7 +140,6 @@ public class ListFragment extends Fragment {
         return super.onOptionsItemSelected(item);
     }
 
-
     /**
      * アレンジ一覧をDBから取得
      */
@@ -179,7 +170,6 @@ public class ListFragment extends Fragment {
 
     }
 
-
     /**
      * UIの設定
      */
@@ -189,7 +179,6 @@ public class ListFragment extends Fragment {
         listview.setAdapter(adapter);
         listview.setOnItemClickListener(onItemClickListener);
     }
-
 
     /**
      * リストビュークリック時の処理
@@ -205,7 +194,6 @@ public class ListFragment extends Fragment {
             fragmentTransaction.commit();
         }
     };
-
 
     /**
      * 一つ前のフラグメントへ戻る

@@ -11,7 +11,6 @@ import android.widget.LinearLayout;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
-
 /**
  * トップ画面のフラグメント
  */
@@ -22,7 +21,6 @@ public class TopFragment extends Fragment {
     DartsEffectButton startButton;
     DartsEffectButton editButton;
 
-
     /**
      * インスタンスの生成
      * @return
@@ -31,13 +29,11 @@ public class TopFragment extends Fragment {
         return new TopFragment();
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         return inflater.inflate(R.layout.top_fragment, container, false);
     }
-
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -47,7 +43,6 @@ public class TopFragment extends Fragment {
         setHasOptionsMenu(true);
     }
 
-
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         // ツールバーの設定
@@ -56,7 +51,6 @@ public class TopFragment extends Fragment {
         toolbar.setLayoutParams(toolbarLayoutParams);
         toolbar.setTitle(null);
     }
-
 
     /**
      * ボタンの設定
